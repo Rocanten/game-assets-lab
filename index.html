@@ -3,33 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Static Website</title>
+  <title>3d Game Assets for Unity</title>
   <!-- Bootstrap CSS -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     rel="stylesheet"
   >
-  <!-- Your Custom Styles -->
+  <!-- Link to External Styles -->
   <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-  <header class="bg-primary text-white text-center py-3">
-    <h1>Welcome to My Website</h1>
+  <!-- Header -->
+  <header class="bg-header text-white text-center py-3">
+    <h1>Game assets for Unity</h1>
+    <p>Find 3d asset for your next game and save your time and budget</p>
   </header>
 
-  <main class="container my-5">
-    <h2>About</h2>
-    <p>This is a static website built with Bootstrap and hosted on GitHub Pages.</p>
-    <button class="btn btn-primary">Click Me</button>
+  <!-- Main Content -->
+  <main class="d-flex justify-content-center align-items-center flex-column my-5">
+    <div class="row">
+      <div class="col">
+        <div class="product-card">
+          <img src="/assets/images/laptop.png" class="img-fluid" alt="3d laptop unity asset">
+          <h2 class="mt-3 ms-1">3d laptop with screen customization and open script</h2>
+          <a href="https://assetstore.unity.com/packages/slug/305964" target="_blank" class="btn btn-outline-primary me-4 mt-4">Purchase on Unity Assets Store</a>
+          <a href="/assets/Laptop_Prefab_for_Unity_Asset.pdf" target="_blank" class="btn btn-outline-secondary me-4 mt-4">Purchase on Unity Assets Store</a>
+        </div>
+      </div>
+    </div>
   </main>
 
+  <!-- Contacts Section -->
+  <section class="contacts-section bg-light py-5 text-center">
+    <h2>Contact Us</h2>
+    <p>If you have any questions, bug reports or suggestions, feel free to reach out to us:</p>
+    <p>
+      <a href="mailto:support@example.com" class="btn btn-outline-primary">prokofev.o.a@gmail.com</a>
+    </p>
+  </section>
+
+  <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3">
-    &copy; 2024 My Website
+    &copy; 2024 3d Game Assets for Unity. All Rights Reserved.
   </footer>
 
   <!-- Bootstrap JavaScript Bundle (with Popper) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Your Custom Scripts -->
-  <script src="script.js"></script>
 </body>
 </html>
