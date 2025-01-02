@@ -10,7 +10,18 @@
     rel="stylesheet"
   >
   <!-- Link to External Styles -->
-  <link href="styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X48T8EHHEC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-X48T8EHHEC');
+  </script>
+
 </head>
 <body>
   <!-- Header -->
@@ -26,8 +37,8 @@
         <div class="product-card">
           <img src="assets/images/laptop.png" class="img-fluid" alt="3d laptop unity asset">
           <h2 class="mt-3 ms-1">3d laptop with screen customization and open script</h2>
-          <a href="https://assetstore.unity.com/packages/slug/305964" target="_blank" class="btn btn-outline-primary me-4 mt-4">Purchase on Unity Assets Store</a>
-          <a href="assets/Laptop_Prefab_for_Unity_Asset.pdf" target="_blank" class="btn btn-outline-secondary me-4 mt-4">Purchase on Unity Assets Store</a>
+          <a href="https://assetstore.unity.com/packages/slug/305964" onclick="gtag('event', 'button_store_clicked', {'product': '3dlaptop'});" target="_blank" class="btn btn-outline-primary me-4 mt-4">Purchase on Unity Assets Store</a>
+          <a href="assets/Laptop_Prefab_for_Unity_Asset.pdf" onclick="gtag('event', 'button_documentation_clicked', {'product': '3dlaptop'});" target="_blank" class="btn btn-outline-secondary me-4 mt-4">Get Documentation</a>
         </div>
       </div>
     </div>
@@ -38,7 +49,10 @@
     <h2>Contact Us</h2>
     <p>If you have any questions, bug reports or suggestions, feel free to reach out to us:</p>
     <p>
-      <a href="mailto:rocanten.assets@gmail.com" class="btn btn-outline-primary">rocanten.assets@gmail.com</a>
+      <a href="mailto:rocanten.assets@gmail.com" onclick="gtag('event', 'button_email_clicked');" class="btn btn-outline-primary">rocanten.assets@gmail.com</a>
+      <button id="copyButton" class="btn btn-primary">
+        Copy email
+      </button>
     </p>
   </section>
 
@@ -47,7 +61,31 @@
     &copy; 2024 3d Game Assets for Unity. All Rights Reserved.
   </footer>
 
+  <div id="toast">Email copied to clipboard!</div>
+
   <!-- Bootstrap JavaScript Bundle (with Popper) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('copyButton').addEventListener('click', function () {
+      const email = 'rocanten.assets@gmail.com';
+
+      const tempInput = document.createElement('input');
+      tempInput.value = email;
+      document.body.appendChild(tempInput);
+
+      tempInput.select();
+      tempInput.setSelectionRange(0, 99999); // For mobile devices
+      document.execCommand('copy');
+
+      document.body.removeChild(tempInput);
+
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    });
+  </script>
 </body>
 </html>
